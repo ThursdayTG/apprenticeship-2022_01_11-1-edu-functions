@@ -6,17 +6,9 @@
 
 
 
-void subRoutine1() {
-	cout	<< " test 1 ..."
-			<< " \n";
-}
-
-/*
- * this is technically doable, but not optimal.
- * this can result in a bloated main file,
- * and pushes the "main()" function unnecessarily downwards,
- * worsening the readability of the main file.
- */
+// prototyping
+void subRoutine1();
+void subRoutine2(int, int); // only the type of the used variables goes here, not variable names
 
 
 
@@ -40,7 +32,8 @@ int main() {
 	do {
 
 		/*	local variable declaration	*/
-			//lorem_ipsum
+		int		a = 38;
+		int		b = 4;
 		/*	local variable declaration	*/
 
 		/*	primary execution block	*
@@ -53,6 +46,8 @@ int main() {
 
 		/*	primary execution block	*/
 		subRoutine1();
+
+		subRoutine2(a, b);
 		/*	primary execution block	*/
 
 		/*	end block	*/
@@ -66,19 +61,40 @@ int main() {
 
 }
 
+// "Einfachtsfunktion"
+void subRoutine1() {
+	std::cout	<< " test 1 ..."
+				<< " \n";
+}
+
+// "Funktion mit Übergabewerten"
+void subRoutine2(int x, int y) {
+	std::cout	<< " sum = "
+				<< x + y
+				<< " \n";
+
+	/*
+	 * variables have to be redeclared,
+	 * because "int a" & "int b" do not exist outside of the scope of "main()" function.
+	 * values (in this case 38 and 4) can be transferred here, variables can not.
+	 */
+}
+
+
+
 /*	using C++ compiler from GCC via console
 
 	compile for debug:
-g++ -Og main-source-b002.cpp -o main-newest.debug
+g++ -Og main-source-b003.cpp -o main-newest.debug
 
 	clear and compile as final executable:
-clear && g++ -O3 main-source-b002.cpp -o main-newest.release
+clear && g++ -O3 main-source-b003.cpp -o main-newest.release
 
 	clear console, compile debug executable, compile release executable, and run program:
-g++ -Og main-source-b002.cpp -o main-newest.debug && g++ -O3 main-source-b002.cpp -o main-newest.release && clear && ./main-newest.release
+g++ -Og main-source-b003.cpp -o main-newest.debug && g++ -O3 main-source-b003.cpp -o main-newest.release && clear && ./main-newest.release
 
-   g++ -Og main-source-b002.cpp -o main-newest.debug
-&& g++ -O3 main-source-b002.cpp -o main-newest.release
+   g++ -Og main-source-b003.cpp -o main-newest.debug
+&& g++ -O3 main-source-b003.cpp -o main-newest.release
 && clear
 && ./main.release
 */

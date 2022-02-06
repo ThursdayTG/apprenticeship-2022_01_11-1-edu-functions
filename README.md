@@ -1,4 +1,4 @@
-# 2022_01_11-1-edu-functions
+# apprenticeship-2022_01_11-1-edu-functions
 
 We were formally taught about functions. Took us long enough, lol
 

@@ -6,6 +6,20 @@
 
 
 
+void subRoutine1() {
+	cout	<< " test 1 ..."
+			<< " \n";
+}
+
+/*
+ * this is technically doable, but not optimal.
+ * this can result in a bloated main file,
+ * and pushes the "main()" function unnecessarily downwards,
+ * worsening the readability of the main file.
+ */
+
+
+
 /*	main function	*/
 
 int main() {
@@ -52,30 +66,19 @@ int main() {
 
 }
 
-void subRoutine1() {
-	cout	<< " test 1 ..."
-			<< " \n";
-}
-
-/*
- * this is incorrect-
- * "subroutine1()" cannot be called in "main()" function,
- * because "subroutine1()" has not been declared before "main()" function.
- */
-
 /*	using C++ compiler from GCC via console
 
 	compile for debug:
-g++ -Og main-source-b001.cpp -o main-newest.debug
+g++ -Og main-source-b002.cpp -o main-newest.debug
 
 	clear and compile as final executable:
-clear && g++ -O3 main-source-b001.cpp -o main-newest.release
+clear && g++ -O3 main-source-b002.cpp -o main-newest.release
 
 	clear console, compile debug executable, compile release executable, and run program:
-g++ -Og main-source-b001.cpp -o main-newest.debug && g++ -O3 main-source-b001.cpp -o main-newest.release && clear && ./main-newest.release
+g++ -Og main-source-b002.cpp -o main-newest.debug && g++ -O3 main-source-b002.cpp -o main-newest.release && clear && ./main-newest.release
 
-   g++ -Og main-source-b001.cpp -o main-newest.debug
-&& g++ -O3 main-source-b001.cpp -o main-newest.release
+   g++ -Og main-source-b002.cpp -o main-newest.debug
+&& g++ -O3 main-source-b002.cpp -o main-newest.release
 && clear
 && ./main.release
 */

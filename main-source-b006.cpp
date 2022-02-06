@@ -25,6 +25,9 @@ int		subRoutine3(int, int);
  */
 
 
+int		subRoutine4(int);
+
+
 
 /*	main function	*/
 
@@ -48,6 +51,8 @@ int main() {
 		/*	local variable declaration	*/
 		int		a = 38;
 		int		b = 4;
+
+		int		number;
 		/*	local variable declaration	*/
 
 		/*	primary execution block	*/
@@ -62,6 +67,13 @@ int main() {
 		cout	<< " sum sR3 dif = "
 				<< subRoutine3(12, 17)
 				<< " \n";
+
+		cout	<< " \n"
+				<< " - - - - -"
+				<< " \n\n"
+				<< " put in a number for subRoutine4: ";
+		cin		>> number;
+		subRoutine4(number);
 		/*	primary execution block	*/
 
 		/*	end block	*/
@@ -107,9 +119,15 @@ int subRoutine3(int x, int y) {
 }
 
 // recursive functions
-int subRoutine4(int x, int y) {
-	int		difference = x - y;
-	return difference;
+int subRoutine4(int i) {
+	i--;
+	std::cout	<< " " << i
+				<< " \n";
+
+	if (i > 0)
+		return subRoutine4(i);
+	else
+		return 0;
 }
 
 
@@ -117,16 +135,16 @@ int subRoutine4(int x, int y) {
 /*	using C++ compiler from GCC via console
 
 	compile for debug:
-g++ -Og main-source-b005.cpp -o main-newest.debug
+g++ -Og main-source-b006.cpp -o main-newest.debug
 
 	clear and compile as final executable:
-clear && g++ -O3 main-source-b005.cpp -o main-newest.release
+clear && g++ -O3 main-source-b006.cpp -o main-newest.release
 
 	clear console, compile debug executable, compile release executable, and run program:
-g++ -Og main-source-b005.cpp -o main-newest.debug && g++ -O3 main-source-b005.cpp -o main-newest.release && clear && ./main-newest.release
+g++ -Og main-source-b006.cpp -o main-newest.debug && g++ -O3 main-source-b006.cpp -o main-newest.release && clear && ./main-newest.release
 
-   g++ -Og main-source-b005.cpp -o main-newest.debug
-&& g++ -O3 main-source-b005.cpp -o main-newest.release
+   g++ -Og main-source-b006.cpp -o main-newest.debug
+&& g++ -O3 main-source-b006.cpp -o main-newest.release
 && clear
 && ./main.release
 */

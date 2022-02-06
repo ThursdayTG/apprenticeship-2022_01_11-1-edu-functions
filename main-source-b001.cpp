@@ -1,4 +1,4 @@
-// inclusion of libraries
+                                                                                                                                  // inclusion of libraries
 	#include <iostream>
 
 // inclusion of files
@@ -18,7 +18,7 @@ int main() {
 	/*	local variable declaration	*/
 	bool	restartOperator;
 		// used to determine whether do-while loop should be repeated manually
-	/**/
+	/*	local variable declaration	*/
 
 
 	cout	<< "\n";
@@ -29,12 +29,16 @@ int main() {
 			//lorem_ipsum
 		/*	local variable declaration	*/
 
-		/*	primary execution block	*/
+		/*	primary execution block	*
 		cout	<< " test 1 ..."
 				<< " \n";
 
 		cout	<< " test 2 ...";
 		cout	<< " \n";
+		/*	primary execution block	*/
+
+		/*	primary execution block	*/
+		subRoutine1();
 		/*	primary execution block	*/
 
 		/*	end block	*/
@@ -48,19 +52,30 @@ int main() {
 
 }
 
+void subRoutine1() {
+	cout	<< " test 1 ..."
+			<< " \n";
+}
+
+/*
+ * this is incorrect-
+ * "subroutine1()" cannot be called in "main()" function,
+ * because "subroutine1()" has not been declared before "main()" function.
+ */
+
 /*	using C++ compiler from GCC via console
 
 	compile for debug:
-g++ -Og main-source-b000-v0_0_0.cpp -o main-newest.debug
+g++ -Og main-source-b001.cpp -o main-newest.debug
 
 	clear and compile as final executable:
-clear && g++ -O3 main-source-b000-v0_0_0.cpp -o main-newest.release
+clear && g++ -O3 main-source-b001.cpp -o main-newest.release
 
 	clear console, compile debug executable, compile release executable, and run program:
-g++ -Og main-source-b000-v0_0_0.cpp -o main-newest.debug && g++ -O3 main-source-b000-v0_0_0.cpp -o main-newest.release && clear && ./main-newest.release
+g++ -Og main-source-b001.cpp -o main-newest.debug && g++ -O3 main-source-b001.cpp -o main-newest.release && clear && ./main-newest.release
 
-   g++ -Og main-source-b000-v0_0_0.cpp -o main-newest.debug
-&& g++ -O3 main-source-b000-v0_0_0.cpp -o main-newest.release
+   g++ -Og main-source-b001.cpp -o main-newest.debug
+&& g++ -O3 main-source-b001.cpp -o main-newest.release
 && clear
 && ./main.release
 */
